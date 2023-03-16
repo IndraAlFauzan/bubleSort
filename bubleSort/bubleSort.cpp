@@ -5,8 +5,7 @@ using namespace std;
 int a[20];           // Deklarasi array a dengan ukuran 20
 int n;               // Deklarasi variabel n untuk menyimpan banyaknya elemen pada array
 
-
-void input() {        // Method untuk input
+void input() {        // procedur untuk input
 	while (true) {   // Looping 
 		cout << "Masukan banyaknya elemen pada array : ";  // Output ke layar
 		cin >> n;     // Input dari pengguna
@@ -27,7 +26,7 @@ void input() {        // Method untuk input
 	}
 }
 
-void display() {   // Method untuk menampilkan hasil
+void display() {   // procedur untuk menampilkan hasil
 	cout << endl;                             // Output baris kosong
 	cout << "==================================" << endl;   // Output ke layar
 	cout << "Element Array yang telah tersusun" << endl;      // Output ke layar
@@ -38,7 +37,7 @@ void display() {   // Method untuk menampilkan hasil
 	cout << endl;                            // Output baris kosong
 }
 
-void bubbleSortArray() {    // Method untuk mengurutkan array dengan metode bubble sort
+void bubbleSortArray() {    // procedur untuk mengurutkan array dengan metode bubble sort
 	for (int i = 1; i < n; i++) {        // Looping dengan i dimulai dari 1 hingga n-1
 		for (int j = 0; j < n - i; j++) {  // Looping dengan j dimulai dari 0 hingga n-i-1
 			if (a[j] > a[j + 1]) {         // Jika nilai pada a[j] lebih besar dari a[j+1]
@@ -52,9 +51,10 @@ void bubbleSortArray() {    // Method untuk mengurutkan array dengan metode bubb
 
 
 int main() {
-	// Membuat objek obj dari class BubbleSort
-	input();      // Memanggil  read() dari class BubbleSort
-	bubbleSortArray();  // Memanggil  bubbleSortArray() dari class BubbleSort
-	display();   // Memanggil  display() dari class BubbleSort
+
+	input();      // Memanggil  procedur read() dari class BubbleSort
+	bubbleSortArray();  // Memanggil  procedur bubbleSortArray() dari class BubbleSort
+	display();   // Memanggil  procedur display() dari class BubbleSort
+	system("pause");
 	return 0;
 }
