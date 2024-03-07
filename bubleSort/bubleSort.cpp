@@ -26,17 +26,21 @@ void input() {        // procedur untuk input
 }
 
 void bubbleSortArray() {    // procedur untuk mengurutkan array dengan metode bubble sort
-	int pass = 1;
-	for (pass; pass < n - 1; pass++) {        // Looping dengan i dimulai dari 1 hingga n-1
-		for (int j = 0; j <= n - 1 - pass; j++) {  // Looping dengan j dimulai dari 0 hingga n-i
-			if (a[j] > a[j + 1]) {         // Jika nilai pada a[j] lebih besar dari a[j+1]
-				int temp = a[j];           // Simpan nilai a[j] ke variabel sementara temp
-				a[j] = a[j + 1];           // Assign nilai a[j+1] ke a[j]
-				a[j + 1] = temp;           // Assign nilai temp ke a[j+1]
+	int pass = 1;  // step 1
+
+	do {
+		for (int j = 0; j <= n - 1 - pass; j++) { // step 2
+			if (a[j] > a[j + 1]) { // step 3
+				int temp = a[j];
+				a[j] = a[j + 1];
+				a[j + 1] = temp;
 			}
 		}
-	}
+		pass = pass + 1; //step 4
+
+	} while (pass <= n); // step 5
 }
+
 
 void unsorted() {
 	cout << endl;                             // Output baris kosong
@@ -49,26 +53,23 @@ void unsorted() {
 	cout << endl;
 }
 
-void display() {   // procedur untuk menampilkan hasil
-	cout << endl;                             // Output baris kosong
-	cout << "==================================" << endl;   // Output ke layar
-	cout << "Element Array yang telah tersusun" << endl;      // Output ke layar
-	cout << "==================================" << endl;   // Output ke layar
-	for (int j = 0; j < n; j++) {            // Looping dengan j dimulai dari 0 hingga n-1
-		cout << a[j];                // Output ke layar
-		if (j < n - 1) {
-			cout << " --> ";
-		}
+void display() {
+	cout << endl;
+	cout << "==================================" << endl;
+	cout << "Element Array yang telah tersusun" << endl;
+	cout << "==================================" << endl;
+	for (int j = 0; j < n; j++) {
+		cout << a[j] << endl; // Output each array element on a new line
 	}
-	cout << endl;                            // Output baris kosong
+	cout << "Jumlah pass = " << n - 1 << endl; // Correctly shows the total number of elements
+	cout << endl;
 }
 
 int main() {
-	input();      // Memanggil  procedur read() 
-	unsorted();		//Memanggil procedur unsorted() dari
-	bubbleSortArray();  // Memanggil  procedur bubbleSortArray() 
-	display();   // Memanggil  procedur display()
 
+	input();      // Memanggil  procedur read() 
+	bubbleSortArray();
+	display();// Memanggil  procedur display()
 	system("pause");
 
 	return 0;
