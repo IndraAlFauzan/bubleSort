@@ -42,17 +42,6 @@ void bubbleSortArray() {    // procedur untuk mengurutkan array dengan metode bu
 }
 
 
-void unsorted() {
-	cout << endl;                             // Output baris kosong
-	cout << "==================================" << endl;   // Output ke layar
-	cout << "Element Array yang belum tersusun" << endl;      // Output ke layar
-	cout << "==================================" << endl;   // Output ke layar
-	for (int j = 0; j < n; j++) {            // Looping dengan j dimulai dari 0 hingga n-1
-		cout << a[j] << endl;                // Output ke layar
-	}
-	cout << endl;
-}
-
 void display() {
 	cout << endl;
 	cout << "==================================" << endl;
