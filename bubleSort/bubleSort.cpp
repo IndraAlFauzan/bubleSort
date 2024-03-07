@@ -24,9 +24,11 @@ void input() {        // procedur untuk input
 		cin >> a[i];                    // Input dari pengguna
 	}
 }
+
 void bubbleSortArray() {    // procedur untuk mengurutkan array dengan metode bubble sort
-	for (int i = 1; i < n; i++) {        // Looping dengan i dimulai dari 1 hingga n-1
-		for (int j = 0; j < n - i; j++) {  // Looping dengan j dimulai dari 0 hingga n-i
+	int pass = 1;
+	for (pass; pass < n - 1; pass++) {        // Looping dengan i dimulai dari 1 hingga n-1
+		for (int j = 0; j <= n - 1 - pass; j++) {  // Looping dengan j dimulai dari 0 hingga n-i
 			if (a[j] > a[j + 1]) {         // Jika nilai pada a[j] lebih besar dari a[j+1]
 				int temp = a[j];           // Simpan nilai a[j] ke variabel sementara temp
 				a[j] = a[j + 1];           // Assign nilai a[j+1] ke a[j]
@@ -53,7 +55,10 @@ void display() {   // procedur untuk menampilkan hasil
 	cout << "Element Array yang telah tersusun" << endl;      // Output ke layar
 	cout << "==================================" << endl;   // Output ke layar
 	for (int j = 0; j < n; j++) {            // Looping dengan j dimulai dari 0 hingga n-1
-		cout << a[j] << endl;                // Output ke layar
+		cout << a[j];                // Output ke layar
+		if (j < n - 1) {
+			cout << " --> ";
+		}
 	}
 	cout << endl;                            // Output baris kosong
 }
@@ -63,6 +68,8 @@ int main() {
 	unsorted();		//Memanggil procedur unsorted() dari
 	bubbleSortArray();  // Memanggil  procedur bubbleSortArray() 
 	display();   // Memanggil  procedur display()
+
+	system("pause");
 
 	return 0;
 }
