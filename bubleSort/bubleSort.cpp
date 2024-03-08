@@ -1,11 +1,14 @@
 #include <iostream>     
+#include <string>
 using namespace std;
 
-int arr[20];           // Deklarasi array a dengan ukuran 20
-int n;               // Deklarasi variabel n untuk menyimpan banyaknya elemen pada array
+int arr[20];           // Deklarasi variable global array a dengan ukuran 20
+int n;               // Deklarasi variabel global n untuk menyimpan banyaknya elemen pada array
+
 
 void input() {        // procedur untuk input
-	while (true) {   // Looping 
+	int d;
+	while (true) {
 		cout << "Masukan banyaknya elemen pada array : ";  // Output ke layar
 		cin >> n;     // Input dari pengguna
 		if (n <= 20)  // Jika n kurang dari atau sama dengan 20
@@ -14,10 +17,10 @@ void input() {        // procedur untuk input
 			cout << "\nArray dapat mempunyai maksimal 20 elemen.\n"; // Output ke layar
 		}
 	}
-	cout << endl;                            // Output baris kosong
-	cout << "===================" << endl;   // Output ke layar
-	cout << "Masukan Elemen Array" << endl;  // Output ke layar
-	cout << "===================" << endl;   // Output ke layar
+	cout << endl;
+	cout << "===================" << endl;
+	cout << "Masukan Elemen Array" << endl;
+	cout << "===================" << endl;
 
 	for (int i = 0; i < n; i++) {   // Looping dengan i dimulai dari 0 hingga n-1
 		cout << "Data ke-" << (i + 1) << ": ";   // Output ke layar
@@ -29,23 +32,24 @@ void bubbleSortArray() {    // procedur untuk mengurutkan array dengan metode bu
 	int pass = 1;  // step 1
 
 	do {
-		for (int j = 0; j <= n - 1 - pass; j++) { // step 2
+		for (int j = 0; j <= n - 1 - pass; j++) { //step 2
 			if (arr[j] > arr[j + 1]) { // step 3
-				int temp = arr[j];
+				int temp;
+				temp = arr[j];
 				arr[j] = arr[j + 1];
 				arr[j + 1] = temp;
 			}
 		}
 		pass = pass + 1; //step 4
 
-		cout << "\nPass " << pass - 1 << ": ";		// Output ke layar
-		for (int k = 0; k < n; k++) {		// Looping nilai k dimulai dari 0 hingga n-1
-			cout << arr[k] << " ";			// Output ke layar
+		cout << "\nPass " << pass - 1 << ": ";// Number of pass
+		for (int k = 0; k < n; k++) {
+			cout << arr[k] << " ";			// Menampilkan data pada number of pass
 
 		}
 		cout << endl;
 
-	} while (pass <= n); // step 5
+	} while (pass <= n - 1); // step 5
 }
 
 
@@ -54,20 +58,27 @@ void display() {
 	cout << "==================================" << endl;
 	cout << "Element Array yang telah tersusun" << endl;
 	cout << "==================================" << endl;
+	cout << endl;
 	for (int j = 0; j < n; j++) {
-		cout << arr[j] << endl; // Output each array element on a new line
+		cout << arr[j]; // menampilkan array 
+		if (j < n - 1) {
+			cout << " --> ";
+		}
 	}
-	cout << "Jumlah pass = " << n - 1 << endl; // Correctly shows the total number of elements
+	cout << endl;
+	cout << endl;
+
+	cout << "Jumlah pass = " << n - 1 << endl; // menampilkan jumlah dari pass
+	cout << endl;
 	cout << endl;
 }
 
 int main() {
 
-	input();      // Memanggil  procedur read() 
+	input();
+
 	bubbleSortArray();
-	display();// Memanggil  procedur display()
-
-
+	display();
 
 	system("pause");
 	return 0;
