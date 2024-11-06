@@ -1,2 +1,2 @@
 Image
-![Alt text]minimal-night-pink-aurora-long-exposure-5k-oa.jpg
+![Alt text] (minimal-night-pink-aurora-long-exposure-5k-oa.jpg)
